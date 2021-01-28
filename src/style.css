@@ -32,10 +32,19 @@ h4 {
 .message {
   padding: 20px;
   display: none;
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  width: 300px;
+  margin: auto;
   border: 1px solid rgb(22, 97, 22);
-  border-radius: 5px;
+  border-top-left-radius: 15px;
+  border-top-right-radius: 15px;
   color: rgb(22, 97, 22);
   background-color: #b5f0ba;
+  z-index: 1;
+  transition: ease 1s;
 }
 
 header {
@@ -50,6 +59,7 @@ header {
   flex-direction: row;
   justify-content: space-between;
   align-items: flex-start;
+  flex-wrap: wrap;
 }
 
 section {
@@ -111,4 +121,14 @@ p {
 
 .btn-red {
   background-color: var(--btn-red);
+}
+
+@media (max-width: 800px) {
+  section {
+  width: 100vw;
+  }
+
+  .container {
+  width: 100%;
+  }
 }

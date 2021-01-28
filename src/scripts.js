@@ -13,7 +13,7 @@ const boldBtn = document.querySelector('#bold');
 const italicBtn = document.querySelector('#italic');
 
 function showMessage(message) {
-  messageEl.style.display = 'block';
+  messageEl.style.display = 'inline-block';
   messageEl.textContent = message;
 
   setTimeout(() => {
