@@ -32,10 +32,10 @@ h4 {
 .message {
   padding: 20px;
   display: none;
-  border: 1px solid green;
+  border: 1px solid rgb(22, 97, 22);
   border-radius: 5px;
-  color: green;
-  background-color: #83f18c;
+  color: rgb(22, 97, 22);
+  background-color: #b5f0ba;
 }
 
 header {
@@ -69,6 +69,15 @@ textarea {
   border-color: #A1A1A1;
   outline: 0;
   color: #000000;
+  font-size: 18px;
+}
+
+.textarea.bold {
+  font-weight: bold;
+}
+
+.textarea.italic {
+  font-style: italic;
 }
 
 p {

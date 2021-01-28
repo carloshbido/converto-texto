@@ -4,7 +4,7 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link rel="stylesheet" href="src/style.css">
-  <title>Converto Tudo</title>
+  <title>Converto Texto</title>
 </head>
 <body>
 
@@ -20,11 +20,11 @@
 
       <h4>Insira o texto no campo ao lado e selecione a opção de desejar</h4>
       <br>
-      <span class="message"> Texto Copiado com sucesso! <span>
+      <span class="message"><span>
     </section>
 
     <div class="container">
-      <textarea id="textarea" placeholder="Digite ou cole seu conteúdo aqui"></textarea>
+      <textarea id="textarea" class="textarea" placeholder="Digite ou cole seu conteúdo aqui"></textarea>
       <br>
       <p>Quantidade de palavras: <span id="words">0</span></p>
       <p>Quantidade de caracteres: <span id="letter">0</span></p>
@@ -39,7 +39,8 @@
         <button id="standard-phrase" class="btn btn-blue">Formato de frase padrão</button>
         <button id="title-case" class="btn btn-blue">Title Case</button>
         <button id="uppercase" class="btn btn-blue">MAIÚSCULA</button>
-        <button id="lowercase" class="btn btn-blue">miniscula</button>
+        <button id="lowercase" class="btn btn-blue">miniscula</button> 
+        <br>
         <button id="bold" class="btn btn-blue"><strong>Negrito</strong></button>
         <button id="italic" class="btn btn-blue"><i>Itálico</i></button>
       </div>
