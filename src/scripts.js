@@ -71,8 +71,6 @@ titleCaseBtn.addEventListener('click', () => {
   const text = textAreaEl.value.toLowerCase();
   const textArr = text.split(' ');
 
-  console.log(textArr);
-
   // Catch all words, put the first letter in Uppercase and concat 
   textArr.forEach(letter => {
     newArray += letter[0].toUpperCase() + letter.slice(1) + ' ';
