@@ -1,8 +1,10 @@
+//Elements from DOM
 const textAreaEl = document.querySelector('#textarea');
 const messageEl = document.querySelector('.message');
 let wordEl = document.querySelector('#words');
 let letterEl = document.querySelector('#letter');
 
+//buttons reference from DOM
 const copyBtn = document.querySelector('#copy');
 const downloadBtn = document.querySelector('#download');
 const cleanBtn = document.querySelector('#clean');
@@ -13,6 +15,7 @@ const lowercaseBtn = document.querySelector('#lowercase');
 const boldBtn = document.querySelector('#bold');
 const italicBtn = document.querySelector('#italic');
 
+//Show message function
 function showMessage(message) {
   messageEl.style.display = 'inline-block';
   messageEl.textContent = message;
@@ -65,19 +68,23 @@ cleanBtn.addEventListener('click', () => {
 //Title Case Event
 titleCaseBtn.addEventListener('click', () => {
 
+  let word = '';
   let newArray = [];
+
+  console.log(typeof textAreaEl.value);
 
   //Put the all words in loowerCase and transform in Arr
   const text = textAreaEl.value.toLowerCase();
   const textArr = text.split(' ');
 
   // Catch all words, put the first letter in Uppercase and concat 
-  textArr.forEach(letter => {
-    newArray += letter[0].toUpperCase() + letter.slice(1) + ' ';
+  textArr.forEach(word => {
+    word = word[0].toUpperCase() + word.slice(1);
+    newArray.push(word);
   });
 
   //Put the value on TextArea
-  textAreaEl.value = newArray;
+  textAreaEl.value = newArray.join(' ');
 
 });
 
