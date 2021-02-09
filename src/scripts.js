@@ -65,13 +65,53 @@ cleanBtn.addEventListener('click', () => {
   textAreaEl.value = '';
 });
 
+//Standard Phase 
+standardPhraseBtn.addEventListener('click', () => {
+
+  //Put the all words in loowerCase and transform in Arr
+  const text = textAreaEl.value.toLowerCase();
+  const textArr = text.split('');
+  const newArr = []
+
+  for (let i = 0; i <= textArr.length; i++ ) {
+
+    const word = textArr[i];
+    const isFirstPosition = i === 0
+    const isBreakLine = word === "\n";
+    const isThereDot = word === ".";
+
+    if(isFirstPosition) {
+      const wordFirstPosition = word[0].toUpperCase();
+      newArr.push(wordFirstPosition);
+      continue;
+    }
+
+    if(isBreakLine || isThereDot) {
+      const wordUppercased = textArr[i + 1].toUpperCase();
+      textArr.splice(textArr[i], 1);
+      newArr.push(wordUppercased);
+      continue;
+    }
+
+    if(textArr[i - 1].toLowerCase() === newArr[i] ) {
+      continue;
+    }
+
+    newArr.push(word);
+  
+  }
+
+  console.log(textArr);
+  console.log(newArr.join(''));
+  textAreaEl.value = newArr.join('');
+
+})
+
 //Title Case Event
 titleCaseBtn.addEventListener('click', () => {
 
   let word = '';
   let newArray = [];
-
-  console.log(typeof textAreaEl.value);
 
   //Put the all words in loowerCase and transform in Arr
   const text = textAreaEl.value.toLowerCase();
