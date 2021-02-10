@@ -78,23 +78,23 @@ standardPhraseBtn.addEventListener('click', () => {
     const word = textArr[i];
     const isFirstPosition = i === 0
     const isBreakLine = word === "\n";
-    const isThereDot = word === ".";
+    const isDot = word === ".";
 
     if(isFirstPosition) {
       const wordFirstPosition = word[0].toUpperCase();
       newArr.push(wordFirstPosition);
-      continue;
+      return;
     }
 
-    if(isBreakLine || isThereDot) {
+    if(isBreakLine || isDot) {
       const wordUppercased = textArr[i + 1].toUpperCase();
       textArr.splice(textArr[i], 1);
       newArr.push(wordUppercased);
-      continue;
+      return;
     }
 
     if(textArr[i - 1].toLowerCase() === newArr[i] ) {
-      continue;
+      return;
     }
 
     newArr.push(word);
