@@ -25,9 +25,7 @@ function showMessage(message) {
   }, 3000);
 };
 
-
 // EVENT LISTENERS
-
 //Fill or remove total of character Event
 textAreaEl.addEventListener(('keydown', 'keyup'), (e) => {
 
@@ -65,47 +63,39 @@ cleanBtn.addEventListener('click', () => {
   textAreaEl.value = '';
 });
 
-//Standard Phase 
+//Standard Phase Event
 standardPhraseBtn.addEventListener('click', () => {
 
   //Put the all words in loowerCase and transform in Arr
   const text = textAreaEl.value.toLowerCase();
-  const textArr = text.split('');
-  const newArr = []
+  const textArr = text.split(' ');
+  let newArray = [];
 
-  for (let i = 0; i <= textArr.length; i++ ) {
+  textArr.forEach((word, index) => {
 
-    const word = textArr[i];
-    const isFirstPosition = i === 0
-    const isBreakLine = word === "\n";
-    const isDot = word === ".";
+    const hasLineBreak = word[0] == '\n';
+    const isFirstLetter = index === 0;
 
-    if(isFirstPosition) {
-      const wordFirstPosition = word[0].toUpperCase();
-      newArr.push(wordFirstPosition);
-      return;
+    if (hasLineBreak) {
+
+      word = word[1].toUpperCase() + word.slice(2);
+      newArray.push(word);
+    
+    } else if (isFirstLetter) {
+    
+      word = word[0].toUpperCase() + word.slice(1)
+      newArray.push(word);
+
+    } else {
+
+      newArray.push(word);
     }
 
-    if(isBreakLine || isDot) {
-      const wordUppercased = textArr[i + 1].toUpperCase();
-      textArr.splice(textArr[i], 1);
-      newArr.push(wordUppercased);
-      return;
-    }
+  });
 
-    if(textArr[i - 1].toLowerCase() === newArr[i] ) {
-      return;
-    }
+  textAreaEl.value = newArray.join(' ');
 
-    newArr.push(word);
-  
-  }
-
-  console.log(textArr);
-  console.log(newArr.join(''));
-  textAreaEl.value = newArr.join('');
-
-})
+});
 
 //Title Case Event
 titleCaseBtn.addEventListener('click', () => {
@@ -123,7 +113,7 @@ titleCaseBtn.addEventListener('click', () => {
     newArray.push(word);
   });
 
-  //Put the value on TextArea
+  //Put the value in TextArea
   textAreaEl.value = newArray.join(' ');
 
 });
@@ -140,6 +130,7 @@ lowercaseBtn.addEventListener('click', () => {
 
 //Bold Event
 boldBtn.addEventListener('click', () => {
+
   textAreaEl.classList.toggle('bold');
   let index;
 
@@ -152,6 +143,7 @@ boldBtn.addEventListener('click', () => {
 
 //Italic Event
 italicBtn.addEventListener('click', () => {
+
   textAreaEl.classList.toggle('italic');
   let index;
 
@@ -161,5 +153,3 @@ italicBtn.addEventListener('click', () => {
   const nameBtn = ['Itálico', 'Retirar Itálico']
   italicBtn.innerHTML = `<i>${nameBtn[index]}</i>`
 });
-
-
