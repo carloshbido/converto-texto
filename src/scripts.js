@@ -83,7 +83,7 @@ standardPhraseBtn.addEventListener('click', () => {
     
     } else if (isFirstLetter) {
     
-      word = word[0].toUpperCase() + word.slice(1)
+      word = word[0].toUpperCase() + word.slice(1);
       newArray.push(word);
 
     } else {
@@ -93,6 +93,7 @@ standardPhraseBtn.addEventListener('click', () => {
 
   });
 
+  //Put the new array on textarea field
   textAreaEl.value = newArray.join(' ');
 
 });
@@ -107,10 +108,54 @@ titleCaseBtn.addEventListener('click', () => {
   const text = textAreaEl.value.toLowerCase();
   const textArr = text.split(' ');
 
-  // Catch all words, put the first letter in Uppercase and concat 
   textArr.forEach(word => {
+
+  const isSpace =  word === '';
+  const hasLineBreak = word.split('').some(letter => letter == '\n');
+
+    if(isSpace) {
+      newArray.push(word);
+      return;
+    }
+
+    if(hasLineBreak) {
+
+      let foundFirstLetter = false;
+      let wordSplitted = [];
+
+      //It Transforms word in array of letters and loop throught it
+      word.split('').forEach(letter => {
+
+        const isLineBreak = letter == '\n';
+
+        if(isLineBreak) {
+          wordSplitted.push(letter);
+          foundFirstLetter = false;
+          return;
+        }
+        
+        if(!isLineBreak && !foundFirstLetter) {
+          wordSplitted.push(letter.toUpperCase());
+          foundFirstLetter = true;
+          return;
+        }
+
+        wordSplitted.push(letter)
+
+      });
+
+      //Transform Array of letter into word
+      word = wordSplitted.join('');
+
+      //Push word into New Array
+      newArray.push(word);
+      return;
+    };
+
+    //Put first Letter on Uppercase and the rest normal lowerCase
     word = word[0].toUpperCase() + word.slice(1);
     newArray.push(word);
+
   });
 
   //Put the value in TextArea
