@@ -102,7 +102,7 @@ standardPhraseBtn.addEventListener('click', () => {
 titleCaseBtn.addEventListener('click', () => {
 
   let word = '';
-  let newArray = [];
+  let newTextArr = [];
 
   //Put the all words in loowerCase and transform in Arr
   const text = textAreaEl.value.toLowerCase();
@@ -114,12 +114,11 @@ titleCaseBtn.addEventListener('click', () => {
   const hasLineBreak = word.split('').some(letter => letter == '\n');
 
     if(isSpace) {
-      newArray.push(word);
+      newTextArr.push(word);
       return;
     }
 
     if(hasLineBreak) {
-
       let foundFirstLetter = false;
       let wordSplitted = [];
 
@@ -141,25 +140,21 @@ titleCaseBtn.addEventListener('click', () => {
         }
 
         wordSplitted.push(letter)
-
+        return;
       });
 
-      //Transform Array of letter into word
+      //Transform Array of letters into one word
       word = wordSplitted.join('');
-
-      //Push word into New Array
-      newArray.push(word);
-      return;
     };
 
     //Put first Letter on Uppercase and the rest normal lowerCase
     word = word[0].toUpperCase() + word.slice(1);
-    newArray.push(word);
-
+    newTextArr.push(word);
+    return;
   });
 
   //Put the value in TextArea
-  textAreaEl.value = newArray.join(' ');
+  textAreaEl.value = newTextArr.join(' ');
 
 });
 
