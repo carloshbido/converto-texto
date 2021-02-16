@@ -48,7 +48,12 @@ textAreaEl.addEventListener(('keydown', 'keyup'), (e) => {
 
 //Copy value Event
 copyBtn.addEventListener('click', ()=> {
-  //Implementar
+  const copyText = document.querySelector('#textarea');
+
+  copyText.select()
+  copyText.setSelectionRange(0, 99999) //For mobile
+
+  document.execCommand('copy');
   showMessage('Texto copiado com sucesso!');
 });
 
@@ -66,105 +71,26 @@ cleanBtn.addEventListener('click', () => {
 //Standard Phase Event
 standardPhraseBtn.addEventListener('click', () => {
 
-  //Put the all words in loowerCase and transform in Arr
-  const text = textAreaEl.value.toLowerCase();
-  const textArr = text.split(' ');
-  let newArray = [];
-
-  textArr.forEach((word, index) => {
-
-    const hasLineBreak = word[0] == '\n';
-    const isFirstLetter = index === 0;
-
-    if (hasLineBreak) {
-
-      word = word[1].toUpperCase() + word.slice(2);
-      newArray.push(word);
-    
-    } else if (isFirstLetter) {
-    
-      word = word[0].toUpperCase() + word.slice(1);
-      newArray.push(word);
-
-    } else {
-
-      newArray.push(word);
-    }
-
-  });
-
-  //Put the new array on textarea field
-  textAreaEl.value = newArray.join(' ');
-
+  //Implementar
 });
 
 //Title Case Event
 titleCaseBtn.addEventListener('click', () => {
 
-  let word = '';
-  let newTextArr = [];
-
-  //Put the all words in loowerCase and transform in Arr
-  const text = textAreaEl.value.toLowerCase();
-  const textArr = text.split(' ');
-
-  textArr.forEach(word => {
-
-  const isSpace =  word === '';
-  const hasLineBreak = word.split('').some(letter => letter == '\n');
-
-    if(isSpace) {
-      newTextArr.push(word);
-      return;
-    }
-
-    if(hasLineBreak) {
-      let foundFirstLetter = false;
-      let wordSplitted = [];
-
-      //It Transforms word in array of letters and loop throught it
-      word.split('').forEach(letter => {
-
-        const isLineBreak = letter == '\n';
-
-        if(isLineBreak) {
-          wordSplitted.push(letter);
-          foundFirstLetter = false;
-          return;
-        }
-        
-        if(!isLineBreak && !foundFirstLetter) {
-          wordSplitted.push(letter.toUpperCase());
-          foundFirstLetter = true;
-          return;
-        }
-
-        wordSplitted.push(letter)
-        return;
-      });
-
-      //Transform Array of letters into one word
-      word = wordSplitted.join('');
-    };
-
-    //Put first Letter on Uppercase and the rest normal lowerCase
-    word = word[0].toUpperCase() + word.slice(1);
-    newTextArr.push(word);
-    return;
-  });
-
-  //Put the value in TextArea
-  textAreaEl.value = newTextArr.join(' ');
-
+  textAreaEl.value = textAreaEl.value.toLowerCase();
+  textAreaEl.style.textTransform = 'capitalize';
 });
 
 //UpperCase Event
 uppercaseBtn.addEventListener('click', () => {
+
   textAreaEl.value = textAreaEl.value.toUpperCase();
 });
 
 //LowerCase Event
 lowercaseBtn.addEventListener('click', () => {
+
+  textAreaEl.style.textTransform = 'none';
   textAreaEl.value = textAreaEl.value.toLowerCase();
 });
 
