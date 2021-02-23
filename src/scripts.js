@@ -71,7 +71,33 @@ cleanBtn.addEventListener('click', () => {
 //Standard Phase Event
 standardPhraseBtn.addEventListener('click', () => {
 
-  //Implementar
+  const words = textAreaEl.value.split('');
+  const textToShow = [];
+  let putLower = false;
+
+  words.forEach((element, index) => {
+
+    const isFirstLetter = index === 0;
+    const foundBreakLine = element == '\n';
+
+    if(foundBreakLine) {
+      textToShow.push(element)
+      putLower = true;
+      return;
+    }
+
+    if (putLower || isFirstLetter) {
+      textToShow.push(element.toUpperCase());
+      putLower = false;
+      return;
+    }
+
+    textToShow.push(element);
+  });
+
+  console.log(textToShow);
+  textAreaEl.value = textToShow.join('');
+
 });
 
 //Title Case Event
