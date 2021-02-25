@@ -50,16 +50,6 @@ h4 {
   animation: show-message 1s ease;
 }
 
-@keyframes show-message {
-  from {
-    opacity: 0;
-  }
-
-  to {
-    opacity: 1;
-  }
-}
-
 header {
   width: 100%;
   margin: auto;
@@ -68,13 +58,16 @@ header {
   height: 80px;
 }
 
+.container__main {
+  margin: 30px 20px;
+}
+
 .main {
   display: flex;
   flex-direction: row;
   justify-content: space-between;
   align-items: flex-start;
   flex-wrap: wrap;
-  margin: 40px 30px 0 30px;
 }
 
 section {
@@ -107,7 +100,7 @@ textarea {
   padding: 5px 15px 5px;
   border-bottom-left-radius: 25px;
   border-bottom-right-radius: 25px;
-   box-shadow: var(--box-shadow);
+  box-shadow: var(--box-shadow);
 }
 
 .textarea__wrapper-textarea.bold {
@@ -155,6 +148,29 @@ p {
 
 .btn-red {
   background-color: var(--red);
+}
+
+
+.texts__container {
+  margin-top: 30px;
+}
+
+.texts__container-text {
+  background-color: #fff;
+  box-shadow: var(--box-shadow);
+  border-radius: 10px;
+  padding: 20px;
+}
+
+
+@keyframes show-message {
+  from {
+    opacity: 0;
+  }
+
+  to {
+    opacity: 1;
+  }
 }
 
 @media (max-width: 800px) {
