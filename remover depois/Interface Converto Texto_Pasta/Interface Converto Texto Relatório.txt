@@ -1,0 +1,53 @@
+Relatório de pacote
+
+-----------------------------------------------------------------------------
+Documento:
+Nome: Interface Converto Texto.pdf
+Modo de cor: Cor RGB
+Perfil de cor: nenhum
+Unidades da régua: pixels
+Dimensões da prancheta: 1024 px x 618 px
+Mostrar imagens no modo de contorno: DESATIVADO
+Realçar fontes substituídas: DESATIVADO
+Realçar glifos substituídos: DESATIVADO
+Preservar capacidade de edição do texto
+Simular papel colorido: DESATIVADO
+
+-----------------------------------------------------------------------------
+Objetos de cor especial:
+
+-----------------------------------------------------------------------------
+Fontes ausentes:NENHUM
+
+-----------------------------------------------------------------------------
+Fontes protegidas que não foram empacotadas:NENHUM
+
+-----------------------------------------------------------------------------
+Fontes:
+Visby CF Bold (OTF)
+Visby CF Medium (OTF)
+Visby CF Thin (OTF)
+Arial (OTF)
+Arial Italic (OTF)
+Arial Bold (OTF)
+
+-----------------------------------------------------------------------------
+Fontes incorporadas:
+NENHUM
+
+-----------------------------------------------------------------------------
+Vínculos ausentes:
+
+C:\Users\jeial\Downloads\2731e7b96dd37177a2e12443e1826ce3.jpg
+Tipo: Outro
+
+-----------------------------------------------------------------------------
+Imagens vinculadas:
+
+C:\Users\jeial\Downloads\WhatsApp Image 2021-02-17 at 15.35.57.jpeg
+Tipo: RGB
+Bits por pixel: 24
+Canais: 3
+Tamanho: 2966K, 1280 por 791 pixels
+Dimensões: 1280 por 791 pontos 
+Resolução: 72 por 72 pixels por polegada

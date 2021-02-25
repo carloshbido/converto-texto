@@ -1,19 +1,21 @@
 @import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,200;1,300&display=swap');
 
 :root {
-  --btn-purple: #6553D3;
-  --btn-blue: #5386D3;
-  --btn-red: #D35353;
+  --yellow: #eabe02;  
+  --green: #2ad32d;  
+  --blue: #0055e2;
+  --red: #f74c26;
+  --box-shadow: 4px 4px 4px rgba(0, 0, 0, 0.2);
 }
 
 * {
   box-sizing: border-box;
+  margin: 0;
 }
 
 body{
   font-family: 'Montserrat', sans-serif;
-  margin: 0 30px;
-  background-color: rgba(252, 247, 247, 0.137);
+  background-color: #ededed;
 }
 
 h3, h4 {
@@ -59,10 +61,11 @@ h4 {
 }
 
 header {
-  width: 300px;
+  width: 100%;
   margin: auto;
-  background-color: aqua;
-  margin-bottom: 30px;
+  background-color: var(--blue);
+  border-bottom: 3px solid var(--red);
+  height: 80px;
 }
 
 .main {
@@ -71,6 +74,7 @@ header {
   justify-content: space-between;
   align-items: flex-start;
   flex-wrap: wrap;
+  margin: 40px 30px 0 30px;
 }
 
 section {
@@ -86,18 +90,31 @@ section {
 textarea {
   width: 100%;
   height: 300px;
-  border-radius: 3px;
-  border-color: #A1A1A1;
+  border-top-left-radius: 25px;
+  border-top-right-radius: 25px;
+  border: none;
   outline: 0;
   color: #000000;
   font-size: 18px;
+  padding: 15px 15px;
+  box-shadow: var(--box-shadow);
 }
 
-.textarea.bold {
+.textarea__wrapper-quantities {
+  background-color: var(--blue);
+  margin-top: -5px;
+  color: #fff;
+  padding: 5px 15px 5px;
+  border-bottom-left-radius: 25px;
+  border-bottom-right-radius: 25px;
+   box-shadow: var(--box-shadow);
+}
+
+.textarea__wrapper-textarea.bold {
   font-weight: bold;
 }
 
-.textarea.italic {
+.textarea__wrapper-textarea.italic {
   font-style: italic;
 }
 
@@ -109,13 +126,15 @@ p {
 
 .btn {
   border: none;
-  border-radius: 5px;
+  border-radius: 50px;
   padding: 10px 15px;
   margin: 20px 20px 0 0;
   cursor: pointer;
   font-size: 16px;
   font-family: 'Montserrat', sans-serif;
   color: #fff;
+  border: 3px #fff solid;
+  box-shadow: var(--box-shadow);
 }
 
 .btn:focus {
@@ -123,15 +142,19 @@ p {
 }
 
 .btn-blue {
-  background-color: var(--btn-blue);
+  background-color: var(--blue);
 }
 
-.btn-purple {
-  background-color: var(--btn-purple);
+.btn-green {
+  background-color: var(--green);
+}
+
+.btn-yellow {
+  background-color: var(--yellow);
 }
 
 .btn-red {
-  background-color: var(--btn-red);
+  background-color: var(--red);
 }
 
 @media (max-width: 800px) {

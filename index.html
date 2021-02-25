@@ -9,7 +9,7 @@
 <body>
 
   <header>
-    <img src="#" alt="Logo">
+    
   </header>
 
   <div class="main">
@@ -25,14 +25,18 @@
     </section>
 
     <div class="container">
-      <textarea id="textarea" class="textarea" placeholder="Digite ou cole seu conteúdo aqui"></textarea>
-      <br>
-      <p>Quantidade de palavras: <strong><span id="words">0</span></strong></p>
-      <p>Quantidade de caracteres: <strong><span id="letter">0</span></strong></p>
 
+      <div class="textarea__wrapper">
+        <textarea id="textarea" class="textarea__wrapper-textarea" placeholder="Digite ou cole seu conteúdo aqui"></textarea>
+        <div class="textarea__wrapper-quantities">
+          <p>Quantidade de palavras: <strong><span id="words">0</span></strong></p>
+          <p>Quantidade de caracteres: <strong><span id="letter">0</span></strong></p>
+        </div>
+      </div>
+      
       <div class="btn-1">
-        <button id="copy" class="btn btn-purple">Copiar Texto</button>
-        <button id="download" class="btn btn-purple">Download Texto</button>
+        <button id="copy" class="btn btn-yellow">Copiar Texto</button>
+        <button id="download" class="btn btn-green">Download Texto</button>
         <button id="clean" class="btn btn-red">Limpar Texto</button>
       </div>
 
@@ -45,6 +49,7 @@
         <button id="bold" class="btn btn-blue"><strong>Negrito</strong></button>
         <button id="italic" class="btn btn-blue"><i>Itálico</i></button>
       </div>
+
     </div>
 
   </div>
