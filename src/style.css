@@ -6,6 +6,7 @@
   --blue: #0055e2;
   --red: #f74c26;
   --box-shadow: 4px 4px 4px rgba(0, 0, 0, 0.2);
+  --liner-blue: linear-gradient(0.100turn, #0055e2, #84a9e5);
 }
 
 * {
@@ -53,13 +54,18 @@ h4 {
 header {
   width: 100%;
   margin: auto;
-  background-color: var(--blue);
+  background: var(--liner-blue);
   border-bottom: 3px solid var(--red);
   height: 80px;
 }
 
-.container__main {
-  margin: 30px 20px;
+header img {
+  height: inherit;
+  margin-left: 50px;
+}
+
+.container {
+  margin: 30px 50px;
 }
 
 .main {
@@ -71,33 +77,50 @@ header {
 }
 
 section {
-  padding: 0 20px;
+  padding-right: 20px;
   width: 30%;
   text-align: center;
 }
 
-.container {
+.section__side {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.section__side img{
+  width: 100px;
+  width: 200px;
+  display: block;
+}
+
+.section__side p{
+  color: #242323;
+}
+
+.container__main {
   width: 70%;
 }
 
 textarea {
   width: 100%;
-  height: 300px;
+  height: 280px;
+  padding: 15px 15px;
+  color: #000000;
+  font-size: 18px;
   border-top-left-radius: 25px;
   border-top-right-radius: 25px;
   border: none;
   outline: 0;
-  color: #000000;
-  font-size: 18px;
-  padding: 15px 15px;
-  box-shadow: var(--box-shadow);
+  resize: none;
+  box-shadow: 4px 0px 4px rgba(0, 0, 0, 0.2);
 }
 
 .textarea__wrapper-quantities {
-  background-color: var(--blue);
+  background: var(--liner-blue);
   margin-top: -5px;
   color: #fff;
-  padding: 5px 15px 5px;
+  padding: 10px 15px;
   border-bottom-left-radius: 25px;
   border-bottom-right-radius: 25px;
   box-shadow: var(--box-shadow);
@@ -128,6 +151,15 @@ p {
   color: #fff;
   border: 3px #fff solid;
   box-shadow: var(--box-shadow);
+  transform: scale(1.0);
+}
+
+.btn:active {
+  transform: scale(0.97);
+}
+
+.btn-size {
+  width: 161px;
 }
 
 .btn:focus {
@@ -150,18 +182,22 @@ p {
   background-color: var(--red);
 }
 
-
 .texts__container {
   margin-top: 30px;
 }
 
 .texts__container-text {
   background-color: #fff;
+  margin-bottom: 20px;
+  padding: 20px;
   box-shadow: var(--box-shadow);
   border-radius: 10px;
-  padding: 20px;
+  
 }
 
+.texts__container-text h2 {
+  margin-bottom: 10px
+}
 
 @keyframes show-message {
   from {
@@ -178,7 +214,7 @@ p {
   width: 100vw;
   }
 
-  .container {
+  .container__main {
   width: 100%;
   }
 }

@@ -92,10 +92,9 @@ standardPhraseBtn.addEventListener('click', () => {
       return;
     }
 
-    textToShow.push(element);
+    textToShow.push(element.toLowerCase());
   });
 
-  console.log(textToShow);
   textAreaEl.value = textToShow.join('');
 
 });
