@@ -6,7 +6,7 @@
   --blue: #0055e2;
   --red: #f74c26;
   --box-shadow: 4px 4px 4px rgba(0, 0, 0, 0.2);
-  --liner-blue: linear-gradient(0.100turn, #0055e2, #84a9e5);
+  --liner-blue: linear-gradient(0.100turn, #0055e2, #4880db);
 }
 
 * {
@@ -34,21 +34,20 @@ h4 {
 }
 
 .message {
-  padding: 20px;
-  display: none;
+  padding: 0 20px;
   position: absolute;
-  bottom: 0;
-  left: 0;
-  right: 0;
+  height: 60px;
   width: 300px;
-  margin: auto;
-  border: 1px solid rgb(22, 97, 22);
-  border-top-left-radius: 15px;
-  border-top-right-radius: 15px;
-  color: rgb(22, 97, 22);
-  background-color: #b5f0ba;
+  text-align: center;
+  line-height: 60px;
+  top: 10px;
+  right: 10px;
+  border: 3px solid #fff;
+  border-radius: 10px;
+  color: #fff;
+  background-color: var(--green);
   z-index: 1;
-  animation: show-message 1s ease;
+  display: none;
 }
 
 header {
@@ -119,8 +118,8 @@ textarea {
   padding: 15px 15px;
   color: #000000;
   font-size: 18px;
-  border-top-left-radius: 25px;
-  border-top-right-radius: 25px;
+  border-top-left-radius: 15px;
+  border-top-right-radius: 15px;
   border: none;
   outline: 0;
   resize: none;
@@ -132,8 +131,8 @@ textarea {
   margin-top: -5px;
   color: #fff;
   padding: 10px 15px;
-  border-bottom-left-radius: 25px;
-  border-bottom-right-radius: 25px;
+  border-bottom-left-radius: 15px;
+  border-bottom-right-radius: 15px;
   box-shadow: var(--box-shadow);
 }
 

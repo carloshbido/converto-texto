@@ -25,6 +25,20 @@ function showMessage(message) {
   }, 3000);
 };
 
+//download function
+function download(filename, text) {
+  let element = document.createElement('a');
+  element.setAttribute('href', 'data:text/plain;charset=utf-8,' + encodeURIComponent(text));
+  element.setAttribute('download', filename);
+
+  element.style.display = 'none';
+  document.body.appendChild(element);
+
+  element.click();
+
+  document.body.removeChild(element);
+}
+
 // EVENT LISTENERS
 //Fill or remove total of character Event
 textAreaEl.addEventListener(('keydown', 'keyup'), (e) => {
@@ -58,14 +72,15 @@ copyBtn.addEventListener('click', ()=> {
 });
 
 //Download value Event
-downloadBtn.addEventListener('click', ()=> {
-  //Implementar
-  console.log(textAreaEl.value);
+downloadBtn.addEventListener('click', () => {
+  download('Texto Coverto Tudo',textAreaEl.value);
 });
 
 //Clean textArea Event
 cleanBtn.addEventListener('click', () => {
   textAreaEl.value = '';
+  letterEl.textContent = 0;
+  wordEl.textContent = 0;
 });
 
 //Standard Phase Event
@@ -73,28 +88,42 @@ standardPhraseBtn.addEventListener('click', () => {
 
   const words = textAreaEl.value.split('');
   const textToShow = [];
-  let putLower = false;
+  let putLowerByFoundBreakLine = false;
+  let putLowerByPointAndSpace = false;
+  let nextIsSpace = false;
 
   words.forEach((element, index) => {
 
     const isFirstLetter = index === 0;
     const foundBreakLine = element == '\n';
+    const foundPoint = element == '.';
+    const isSpace = element == ' ';
 
-    if(foundBreakLine) {
-      textToShow.push(element)
-      putLower = true;
+    if(isSpace && nextIsSpace) {
+      textToShow.push(element);
+      putLowerByPointAndSpace = true;
+      nextIsSpace = false;
       return;
     }
 
-    if (putLower || isFirstLetter) {
+    if (foundBreakLine || foundPoint ) {
+      textToShow.push(element);
+      nextIsSpace = true;
+      putLowerByFoundBreakLine = true;
+      return;
+    }
+
+    if (putLowerByFoundBreakLine || isFirstLetter || putLowerByPointAndSpace) {
       textToShow.push(element.toUpperCase());
-      putLower = false;
+      putLowerByFoundBreakLine = false;
+      putLowerByPointAndSpace = false;
       return;
     }
 
     textToShow.push(element.toLowerCase());
   });
 
+  textAreaEl.style.textTransform = 'none';
   textAreaEl.value = textToShow.join('');
 
 });
