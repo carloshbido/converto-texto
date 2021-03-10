@@ -3,6 +3,7 @@ const textAreaEl = document.querySelector('#textarea');
 const messageEl = document.querySelector('.message');
 let wordEl = document.querySelector('#words');
 let letterEl = document.querySelector('#letter');
+const year = document.querySelector('#year');
 
 //buttons reference from DOM
 const copyBtn = document.querySelector('#copy');
@@ -14,6 +15,12 @@ const uppercaseBtn = document.querySelector('#uppercase');
 const lowercaseBtn = document.querySelector('#lowercase');
 const boldBtn = document.querySelector('#bold');
 const italicBtn = document.querySelector('#italic');
+
+//Show year 
+(function showYearOnBrowser() {
+  const currentDate = new Date();
+  year.textContent = currentDate.getFullYear();
+})();
 
 //Show message function
 function showMessage(message) {
