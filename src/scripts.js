@@ -24,11 +24,11 @@ const italicBtn = document.querySelector('#italic');
 
 //Show message function
 function showMessage(message) {
-  messageEl.style.display = 'inline-block';
+  messageEl.classList.add('show');
   messageEl.textContent = message;
 
   setTimeout(() => {
-    messageEl.style.display = 'none';
+    messageEl.classList.remove('show');
   }, 3000);
 };
 
