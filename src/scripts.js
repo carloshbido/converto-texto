@@ -24,8 +24,8 @@ const italicBtn = document.querySelector('#italic');
 
 //Show message function
 function showMessage(message) {
-  messageEl.classList.add('show');
   messageEl.textContent = message;
+  messageEl.classList.add('show');
 
   setTimeout(() => {
     messageEl.classList.remove('show');
