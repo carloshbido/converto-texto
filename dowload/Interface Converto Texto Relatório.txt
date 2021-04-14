@@ -1,0 +1,43 @@
+Relatório de pacote
+
+-----------------------------------------------------------------------------
+Documento:
+Nome: Interface Converto Texto.pdf
+Modo de cor: Cor RGB
+Perfil de cor: nenhum
+Unidades da régua: pixels
+Dimensões da prancheta: 1024 px x 2171,4468 px
+Mostrar imagens no modo de contorno: DESATIVADO
+Realçar fontes substituídas: DESATIVADO
+Realçar glifos substituídos: DESATIVADO
+Preservar capacidade de edição do texto
+Simular papel colorido: DESATIVADO
+
+-----------------------------------------------------------------------------
+Objetos de cor especial:
+
+-----------------------------------------------------------------------------
+Fontes ausentes:NENHUM
+
+-----------------------------------------------------------------------------
+Fontes protegidas que não foram empacotadas:NENHUM
+
+-----------------------------------------------------------------------------
+Fontes:
+Arial Bold (OTF)
+Arial (OTF)
+Arial Italic (OTF)
+Visby CF Light (OTF)
+Visby CF Bold (OTF)
+
+-----------------------------------------------------------------------------
+Fontes incorporadas:
+NENHUM
+
+-----------------------------------------------------------------------------
+Vínculos ausentes:
+NENHUM
+
+-----------------------------------------------------------------------------
+Imagens vinculadas:
+NENHUM
