@@ -11,7 +11,7 @@
   --blue: #0055e2;
   --red: #f74c26;
   --box-shadow: 4px 4px 4px rgba(0, 0, 0, 0.2);
-  --liner-blue: linear-gradient(0.100turn, #0055e2, #4880db);
+  --liner-blue: linear-gradient(0.100turn, #0055e2, #719adb);
 }
 
 * {
@@ -54,7 +54,7 @@ h4 {
   border-top: 0px;
   top: 0px;
   left: 50%;
-  color: #fff;
+  color: #000;
   background-color: var(--green);
   z-index: 1;
   transform: translate(-50%, -100%);
@@ -67,17 +67,26 @@ h4 {
 
 header {
   width: 100%;
-  margin: auto;
+  padding: 0px 70px;
   background: var(--liner-blue);
   border-bottom: 3px solid var(--red);
   z-index: 2;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
 }
 
 header img {
   height: inherit;
-  margin-left: 50px;
   height: 80px;
   padding-top: 10px;
+}
+
+header a {
+  color: #fff;
+  font-weight: bold;
+  text-decoration: none;
+  font-size: 20px;
 }
 
 .container {
@@ -105,7 +114,7 @@ header img {
   position: relative;
 }
 
-.main > aside > .side__container {
+.side__container {
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -114,8 +123,7 @@ header img {
   background-color: #fff;
 }
 
-
-.main > aside > .side__container > .side__main {
+.side__main {
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -124,31 +132,31 @@ header img {
   padding: 0px 20px;
 }
 
-.main > aside > .side__container > .line {
+.line {
   background-color: orangered;
   height: 2px;
   width: 90%;
 }
 
-.main > aside > .side__container:nth-child(3) {
+.side__container:nth-child(3) {
   width: 60px;
   height: 40px;
 }
 
-.main > aside > .side__container > .side__main img, 
-.main > aside > .side__container > .side__main h3{
+.side__main img, 
+.side__main h3{
   margin-bottom: 20px;
   color: orangered;
 }
 
-.main > aside > .side__container > .side__main img {
+.side__main img {
   width: 60px;
-  height: 60px;
+  height: 50px;
   display: block;
   fill: var(--blue);
 }
 
-.main > aside > .side__container > .side__main p {
+.side__main p {
   color: #242323;
   font-size: 16px;
   text-align: center;
@@ -156,7 +164,8 @@ header img {
   letter-spacing: 1px;
 }
 
-.side__container__skewed {
+.side__container::after {
+  content: '';
   position: absolute;
   left: 30;
   bottom: -10;
@@ -167,7 +176,6 @@ header img {
   transform-origin: top right;
   width: 85%;
 }
-
 
 .container__main {
   flex: 2.8;
@@ -209,6 +217,7 @@ textarea {
   display: inline;
   margin-right: 30px;
   margin-bottom: 30px;
+  font-weight: normal;
 }
 
 .btn {
@@ -259,7 +268,7 @@ textarea {
   flex-wrap: wrap;
   justify-content: space-evenly;
   align-items: center;
-  margin: 50px 0;
+  margin: 70px 0px 0px 50px;
 }
 
 .gooole__announcement--box {
@@ -271,56 +280,98 @@ textarea {
 }
 
 .welcome-container {
-  background-color: #fff;
-  margin: 0 auto;
-  margin-right: -50px;
-  margin-left: -50px;
+  margin: 40px -50px 0px auto;
   padding: 0px 50px;
   height: 600px;
   z-index: 2;
 }
 
 .welcome {
-  margin: 40px 0px 40px;
   text-align: center;
-  border-bottom: 1px solid #e1e1e1;
-  padding: 40px;
+  padding: 40px 10px 20px;
 }
 
-.welcome h1 {
+.welcome h2 {
   text-align: center;
+  font-size: 2rem;
+  margin-bottom: 20px;
 }
 
 .welcome p {
-  margin-bottom: 10px;
+  margin-bottom: 20px;
+  font-size: 20px;
+  font-weight: bold;
+}
+
+.line-black {
+  background-color: #000000;
+  height: 4px;
+  margin: auto;
+  margin-bottom: 90px;
 }
 
 .texts__container {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
-  grid-gap: 40px;
-  margin: 40px 0px;
+  gap: 40px 90px; 
+  margin: 40px 100px;
+  height: fit-content;
+}
+
+.texts__container-text {
+  text-align: center;
+}
+
+.texts__container-text h2 {
+  margin-bottom: 10px;
+}
+
+.texts__container-text p {
+  letter-spacing: 3px;
+}
+
+.container-robot {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 250px 0px 120px;
+}
+
+.robot {
+  max-width: 80vw;
+  height: 80vh;
 }
 
 footer {
-  background-color: #4880db;
+  background: var(--liner-blue);
   display: flex;
-  justify-content: space-between;
+  flex-direction: column;
   align-items: center;
-  padding: 0 50px;
+  justify-content: center;
+  padding: 30px 50px;
+  border-top: 3px solid var(--red);
+  margin-bottom: -18px; /*it takes off white space after footer*/
 }
 
-footer > p {
-  padding: 30px 0px;
-  color: white; 
+.logo img {
+  width: 500px;
 }
 
-footer > p > a {
-  color: var(--green);
+.authors {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 600px;
+  color: white;
+  font-weight: 600;
+}
+
+.authors p a {
   text-decoration: none;
+  color: var(--green);
 }
 
-footer > p > a:hover {
+.authors p a:hover {
   color: #fff;
 }
 
@@ -354,6 +405,5 @@ footer > p > a:hover {
 
   .gooole__announcement--box {
     left: 50%;
-
   }
 }
