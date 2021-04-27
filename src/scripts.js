@@ -5,7 +5,7 @@ let wordEl = document.querySelector('#words')
 let letterEl = document.querySelector('#letter')
 const year = document.querySelector('#year')
 
-//buttons reference from DOM
+//buttons from DOM
 const copyBtn = document.querySelector('#copy')
 const downloadBtn = document.querySelector('#download')
 const cleanBtn = document.querySelector('#clean')
@@ -16,7 +16,7 @@ const lowercaseBtn = document.querySelector('#lowercase')
 const boldBtn = document.querySelector('#bold')
 const italicBtn = document.querySelector('#italic')
 
-//Show year to load the page
+//Show year automatic
 window.addEventListener('DOMContentLoaded', () => {
   year.textContent = new Date().getFullYear()
 })
@@ -49,7 +49,7 @@ function download(filename, text) {
 //Fill or remove total of character Event
 textAreaEl.addEventListener(('keydown', 'keyup'), (e) => {
 
-  //Word
+  //Change Word
   const textArr = textAreaEl.value.split(' ')
   if(textAreaEl.value == '') {
     wordEl.textContent = 0
@@ -57,11 +57,11 @@ textAreaEl.addEventListener(('keydown', 'keyup'), (e) => {
     wordEl.textContent = textArr.length
   }
 
-  //Caracter/Letter
+  //Change Caracter/Letter
   if(textAreaEl.value == '') {
     letterEl.textContent = 0
   } else {
-    letterEl.textContent = e.target.value.length + 1
+    letterEl.textContent = e.target.value.length++
   }
 
 })
